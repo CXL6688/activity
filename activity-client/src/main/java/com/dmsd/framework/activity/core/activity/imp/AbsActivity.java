@@ -1,20 +1,20 @@
 package com.dmsd.framework.activity.core.activity.imp;
 
-import com.dmsd.framework.activity.core.activity.ActivityResult;
-import com.dmsd.framework.activity.core.activity.IActivity;
-import com.dmsd.framework.activity.core.activity.IActivityCallBack;
-import com.dmsd.framework.activity.core.activity.IActivityContextReader;
+import com.dmsd.framework.activity.core.activity.*;
 import com.dmsd.framework.activity.core.component.IStartActivityComponent;
+import lombok.Data;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 抽象活动类
  * @author cao xueliang
  * @date 2020/9/28 10:29
 */
+@Data
 public class AbsActivity implements IActivity {
-    @Setter
-    protected IActivityContextReader activityContextReader;
+    @Autowired
+    protected IActivityContext activityContextReader;
 
     /**
      * 起始节点

@@ -4,22 +4,22 @@
        xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
-    <bean id="testActivity1" class="com.dmsd.framework.activity.core.activity.imp.DefaultActivity">
+    <bean id="testActivity1" class="com.dmsd.framework.activity.core.activity.imp.DefaultActivity" lazy-init="true" scope="prototype">
         <property name="activityContextReader" ref="activityContext1"></property>
 
         <property name="startComponent">
             <bean class="com.dmsd.framework.activity.core.component.impl.DefaultStartComponent">
-                <property name="activityContextReader" ref="activityContext1"></property>
+                <property name="activityContext" ref="activityContext1"></property>
                 <property name="childComponents">
                     <list>
                         <bean class="com.dmsd.framework.activity.example.ActivityComponent1">
-                            <property name="activityContextReader" ref="activityContext1"></property>
+                            <property name="activityContext" ref="activityContext1"></property>
                         </bean>
                         <bean class="com.dmsd.framework.activity.example.ActivityComponent2">
-                            <property name="activityContextReader" ref="activityContext1"></property>
+                            <property name="activityContext" ref="activityContext1"></property>
                         </bean>
                         <bean class="com.dmsd.framework.activity.example.ActivityComponent3">
-                            <property name="activityContextReader" ref="activityContext1"></property>
+                            <property name="activityContext" ref="activityContext1"></property>
                         </bean>
                     </list>
                 </property>

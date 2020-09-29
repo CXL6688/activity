@@ -1,7 +1,6 @@
 package com.dmsd.framework.activity.core.activity.imp;
 
-import com.dmsd.framework.activity.core.activity.IActivityContextReader;
-import com.dmsd.framework.activity.core.activity.IActivityContextWriter;
+import com.dmsd.framework.activity.core.activity.IActivityContext;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
@@ -14,7 +13,7 @@ import java.util.UUID;
  * @date 2020/9/28 14:56
 */
 @Slf4j
-public abstract class AbsActivityContext implements IActivityContextReader, IActivityContextWriter {
+public abstract class AbsActivityContext implements IActivityContext {
     protected final String id= UUID.randomUUID().toString();
     protected Map<String,Object> innerMap=new HashMap<>();
     protected Map<String,Object> outerMap=new HashMap<>();

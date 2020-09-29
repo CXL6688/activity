@@ -6,7 +6,9 @@ package com.dmsd.framework.activity.core.activity;
  * @author cao xueliang
  * @date 2020/9/28 10:26
 */
-public interface IActivityContextReader {
+public interface IActivityContext {
     <T> T get(String key,Class<T> clazz);
+
+    boolean set(String key,Object value);
 
 }

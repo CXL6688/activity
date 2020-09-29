@@ -13,8 +13,12 @@
     <dependencies>
         <dependency>
             <groupId>com.dmsd.framework</groupId>
-            <artifactId>activity-core</artifactId>
+            <artifactId>activity-client</artifactId>
             <version>${parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

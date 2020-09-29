@@ -1,5 +1,6 @@
 package com.dmsd.framework.activity.core.activity;
 
+import lombok.Data;
 import lombok.ToString;
 
 /**
@@ -8,6 +9,7 @@ import lombok.ToString;
  * @date 2020/9/26 21:03
 */
 @ToString
+@Data
 public class ActivityResult<T> {
     /**
      * 结果编码
@@ -21,6 +23,10 @@ public class ActivityResult<T> {
      * 返回数据
      */
     private T data;
+
+    public ActivityResult(){
+
+    }
 
     public ActivityResult(int code, T data, String message) {
         this.code = code;

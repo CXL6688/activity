@@ -10,7 +10,7 @@
     </bean>
 
     <bean id="startActivityComponent1" class="com.dmsd.framework.activity.core.component.impl.DefaultStartComponent">
-        <property name="activityContextReader" ref="activityContext1"></property>
+        <property name="activityContext" ref="activityContext1"></property>
         <property name="childComponents">
             <list>
                 <ref bean="activityComponent2"></ref>
@@ -19,8 +19,8 @@
         </property>
     </bean>
 
-    <bean id="activityComponent1" class="com.dmsd.framework.activity.example.ActivityComponent1">
-        <property name="activityContextReader" ref="activityContext1"></property>
+    <bean id="activityComponent1" class="com.dmsd.framework.activity.example.ActivityComponent1" lazy-init="true" scope="prototype">
+        <property name="activityContext" ref="activityContext1"></property>
         <property name="childComponents">
             <list>
                 <ref bean="activityComponent3"></ref>
@@ -28,8 +28,8 @@
         </property>
     </bean>
 
-    <bean id="activityComponent2" class="com.dmsd.framework.activity.example.ActivityComponent2">
-        <property name="activityContextReader" ref="activityContext1"></property>
+    <bean id="activityComponent2" class="com.dmsd.framework.activity.example.ActivityComponent2" lazy-init="true" scope="prototype">
+        <property name="activityContext" ref="activityContext1"></property>
         <property name="childComponents">
             <list>
                 <ref bean="activityComponent3"></ref>
@@ -37,8 +37,8 @@
         </property>
     </bean>
 
-    <bean id="activityComponent3" class="com.dmsd.framework.activity.example.ActivityComponent3">
-        <property name="activityContextReader" ref="activityContext1"></property>
+    <bean id="activityComponent3" class="com.dmsd.framework.activity.example.ActivityComponent3" lazy-init="true" scope="prototype">
+        <property name="activityContext" ref="activityContext1"></property>
     </bean>
 
     <bean id="activityContext1" class="com.dmsd.framework.activity.core.activity.imp.DefaultActivityContext">

@@ -4,8 +4,12 @@ package com.dmsd.framework.activity.example;
 import com.dmsd.framework.activity.core.activity.ActivityResult;
 import com.dmsd.framework.activity.core.activity.IActivity;
 import com.dmsd.framework.activity.core.activity.IActivityCallBack;
+import com.dmsd.framework.activity.core.component.IActivityComponent;
 import org.junit.Test;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Map;
 
 public class IActivityTest {
 
@@ -27,5 +31,12 @@ public class IActivityTest {
                 System.out.println(activityResult);
             }
         });
+    }
+
+    @Test
+    public void testSpringContainer(){
+        ClassPathXmlApplicationContext applicationContext=new ClassPathXmlApplicationContext("classpath:application2.xml");
+        Map<String,IActivityComponent> componentMap= applicationContext.getBeansOfType(IActivityComponent.class);
+        System.out.println(componentMap.size());
     }
 }
